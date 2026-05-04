@@ -925,7 +925,7 @@ footer {
         <div class="about-text">
           <p>I'm a 23-year-old developer from Shahdol, Madhya Pradesh, currently in my second year of BCom at Pandit Sambhunath Shukla University. My path into tech started with a Diploma in Computer Applications and quickly led me into Python — which I've been building with ever since.</p>
           <p>My focus is on data analysis and Python development. I have a natural advantage most CS students don't — a business background. I understand how data connects to real decisions, making me a strong fit for data analyst roles.</p>
-          <p>I hold an IBM Python Developer Professional Certificate and have built real projects in desktop apps, automation, and web. Currently growing into Power BI and Matplotlib.</p>
+          <p>I completed the 100 Days of Code: The Complete Python Pro Bootcamp (Udemy) and have built real projects in desktop apps, automation, and web. Currently growing into Power BI and Matplotlib.</p>
           <p class="about-accent">→ Seeking internship opportunities — Python development, data analyst, or business analyst roles.</p>
         </div>
       </div>
@@ -991,16 +991,16 @@ footer {
           <div class="cert-c">
             <div class="cert-badge" style="background:rgba(212,168,67,0.1)">🏆</div>
             <div>
-              <div class="cert-n2">Python Developer Professional Certificate</div>
-              <div class="cert-iss2">IBM · Professional</div>
-              <div class="cert-v">✓ Verified</div>
+              <div class="cert-n2">100 Days of Code: The Complete Python Pro Bootcamp</div>
+              <div class="cert-iss2">Udemy · Dr. Angela Yu</div>
+              <div class="cert-v">✓ Verified · June 2025</div>
             </div>
           </div>
           <div class="cert-c">
             <div class="cert-badge" style="background:rgba(62,207,142,0.1)">🎓</div>
             <div>
-              <div class="cert-n2">Python Developer Course</div>
-              <div class="cert-iss2">Udemy</div>
+              <div class="cert-n2">Basics of Python</div>
+              <div class="cert-iss2">Infosys Springboard</div>
               <div class="cert-v">✓ Verified</div>
             </div>
           </div>
@@ -1015,7 +1015,7 @@ footer {
           <div class="cert-c">
             <div class="cert-badge" style="background:rgba(139,92,246,0.1)">🖥️</div>
             <div>
-              <div class="cert-n2">Diploma in Computer Application</div>
+              <div class="cert-n2">Diploma in Computer Application (DCA)</div>
               <div class="cert-iss2">Dr. C.V. Raman University</div>
               <div class="cert-v">✓ First Division</div>
             </div>
@@ -1338,13 +1338,12 @@ if (statsEl) countObs.observe(statsEl);
 
 /* ─── Resume download ─── */
 function dlResume() {
-  const url = '#';
-  if (url === '#') {
-    alert('Host your resume PDF on GitHub and replace the # with the direct link in the dlBtn and navDl click handlers.');
-  } else {
-    const a = document.createElement('a');
-    a.href = url; a.download = 'Sujal_Jaiswal_Resume.pdf'; a.click();
-  }
+  const url = 'https://raw.githubusercontent.com/SujalPyDev/Portfolio-website/main/Sujal_Jaiswal_Resume.pdf';
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Sujal_Jaiswal_Resume.pdf';
+  a.target = '_blank';
+  a.click();
 }
 document.getElementById('dlBtn').addEventListener('click', dlResume);
 document.getElementById('navDl').addEventListener('click', dlResume);
