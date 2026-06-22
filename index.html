@@ -803,8 +803,9 @@ function animCount(el,t,d){setTimeout(()=>{let c=0;const s=()=>{c=Math.min(c+1,t
 const cObs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.stat-num[data-target]').forEach((el,i)=>animCount(el,parseInt(el.dataset.target),i*150));cObs.disconnect()}})},{threshold:0.3});
 const stEl=document.querySelector('.h-stats');if(stEl)cObs.observe(stEl);
 
+
 /* ═══ RESUME ═══ */
-function dlResume(){const a=document.createElement('a');a.href='https://raw.githubusercontent.com/SujalPyDev/Portfolio-website/main/Sujal_Jaiswal_Resume.pdf';a.download='Sujal_Jaiswal_Resume.pdf';a.target='_blank';a.click()}
+function dlResume(){const a=document.createElement('a');a.href='./Sujal_Jaiswal_Resume.pdf';a.download='Sujal_Jaiswal_Resume.pdf';document.body.appendChild(a);a.click();document.body.removeChild(a)}
 document.getElementById('dlBtn').addEventListener('click',dlResume);
 document.getElementById('navDl').addEventListener('click',dlResume);
 
