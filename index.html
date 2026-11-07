@@ -437,13 +437,13 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
   <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
-      <div class="sec-head reveal">
+      <div class="sec-head">
         <p class="kicker" style="color:#5eead4">Contact</p>
         <h2>Let&rsquo;s work together.</h2>
         <p>Actively looking for a Data Analyst internship. I respond fast.</p>
       </div>
       <div class="contact-grid">
-        <div class="contact-card reveal">
+        <div class="contact-card">
           <h3>Reach me</h3>
           <div class="contact-row"><span>Email</span><a href="mailto:sujaljaiswal9981@gmail.com">sujaljaiswal9981@gmail.com</a></div>
           <div class="contact-row"><span>Phone</span><a href="tel:+919131535117">+91 91315 35117</a></div>
@@ -451,7 +451,7 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
           <div class="contact-row"><span>LinkedIn</span><a href="https://www.linkedin.com/in/sujal-jaiswal-7a65b2347" target="_blank" rel="noopener">sujal-jaiswal-7a65b2347</a></div>
           <div class="contact-row"><span>Location</span><span style="color:#e2e8f0">India</span></div>
         </div>
-        <div class="contact-card reveal">
+        <div class="contact-card">
           <h3>Available for</h3>
           <ul class="avail">
             <li>Data Analyst internship</li>
@@ -522,10 +522,10 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
   if(smoothOK){
     document.documentElement.style.scrollBehavior = 'auto';
     var targetY = window.scrollY, currentY = window.scrollY, smoothRaf = null, ourScroll = false;
-    var cachedMaxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-    function maxY(){ return cachedMaxY; }
-    function refreshMaxY(){ cachedMaxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight); }
-    window.addEventListener('load', refreshMaxY);
+    // Max scroll is read live on every use, never cached: below-fold content
+    // grows as it renders, and a value cached at load stops the mouse wheel
+    // short of the Contact section, so its cards never reveal.
+    function maxY(){ return Math.max(0, document.documentElement.scrollHeight - window.innerHeight); }
     function clampY(y){ return Math.max(0, Math.min(maxY(), y)); }
     function smoothStep(){
       currentY += (targetY - currentY) * 0.12;
