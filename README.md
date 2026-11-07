@@ -1,85 +1,110 @@
-# 🎨 Portfolio Website
+# Sujal Jaiswal — Data Analyst Portfolio
 
-A modern, responsive personal portfolio website showcasing projects, skills, and professional experience. Built with clean HTML and optimized for all devices.
+A personal portfolio website for **Sujal Jaiswal**, a data analyst
+(India) seeking a Data Analyst internship. It showcases three data
+projects, five certifications, and skills in SQL, Excel, Power BI
+and Python.
 
-## ✨ Features
+**Live site:** https://sujalpydev.github.io/Portfolio-website/
 
-- **Responsive Design** - Mobile-first approach, looks great on all devices
-- **Modern UI/UX** - Clean and professional interface
-- **Portfolio Showcase** - Highlight your best projects
-- **About Section** - Tell your story professionally
-- **Contact Integration** - Easy ways for visitors to reach you
-- **Fast Performance** - Optimized for quick loading
+## About
 
-## 🚀 Live Demo
+BCom student building a career in data analysis, with hands-on
+projects in Power BI, Excel, SQL and Python, and professional
+certificates from Microsoft, Google and IBM.
 
-Visit the live site: [https://sujalpydev.github.io/Portfolio-website/](https://sujalpydev.github.io/Portfolio-website/)
+- **Email:** sujaljaiswal9981@gmail.com
+- **Phone:** +91 91315 35117
+- **GitHub:** https://github.com/SujalPyDev
+- **LinkedIn:** https://www.linkedin.com/in/sujal-jaiswal-7a65b2347
+- **Location:** India
+- **Resume:** [Sujal_Jaiswal_Data_Analyst_Resume.pdf](Sujal_Jaiswal_Data_Analyst_Resume.pdf)
 
-## 📂 Project Structure
+## Projects
+
+### 1. Power BI Capstone — Retail Sales & Profit Dashboard
+Retail sales analysis of 54 orders, with multi-currency sales
+converted to USD. DAX median sales **$222.50**, cost at **75%** of net,
+**$3,474** profit on $13,895 net sales.
+
+- [View on GitHub](https://github.com/SujalPyDev/PowerBI-Sales-Profit-Analytics-Capstone)
+
+### 2. Adventure Works — Q1 Sales Analysis (Excel)
+Q1 sales analysis of 245 records in Excel. Sales grew from
+**$330,900** (Q1 2022) to **$454,430** (Q1 2023), up **+37.3%**,
+with a 4-chart dashboard built with SUMIF, SUMIFS and COUNTIF.
+
+- [View on GitHub](https://github.com/SujalPyDev/Quarter-One-Business-Performance-Analysis-Dashboard)
+
+### 3. Smart Inventory Management System
+Stock tracking system in Python, Tkinter, SQLite and Pandas, with
+real-time stock updates, search/filter, and Pandas stock reports.
+
+- There is no public GitHub repo for this project — see the
+  [LinkedIn post](https://www.linkedin.com/posts/sujal-jaiswal-7a65b2347_python-pythondeveloper-pythonprojects-ugcPost-7428839414614794240-6N_M)
+  about it instead.
+
+## Certifications
+
+All five certificates can be previewed from the Certifications
+section of the live site — each Preview button opens the certificate
+PDF in a new tab.
+
+| Certificate | Issuer |
+| --- | --- |
+| Microsoft Power BI Analyst Professional Certificate ★ | Microsoft |
+| Google Data Analytics Professional Certificate ★ | Google |
+| IBM Data Analyst Professional Certificate ★ | IBM |
+| 100 Days of Code: The Complete Python Pro Bootcamp | Udemy |
+| Basics of Python | Infosys Springboard |
+
+★ = main certification. The certificate PDFs live in
+[`certificates/`](certificates/).
+
+## Skills
+
+- **Data Analyst Skills:** SQL, SQLite, Excel, Power BI, DAX, Power Query,
+  Data Modelling, Data Cleaning & Validation, KPI & YoY Analysis,
+  SUMIF/SUMIFS/COUNTIF, Dashboards
+- **Programming:** Python, Java, Pandas, NumPy, Tkinter,
+  Requests — API Handling, JSON, OOP, File Handling
+- **Tools:** Git, GitHub, MS Office
+
+## Project structure
 
 ```
 Portfolio-website/
-├── index.html          # Main portfolio page
-├── styles.css          # CSS styling
-├── script.js           # Interactive features
-├── assets/             # Images and media
-└── README.md           # This file
+├── index.html                                  # The whole site — single file, no build step
+├── Sujal_Jaiswal_Data_Analyst_Resume.pdf       # 1-page resume (Download Resume button)
+├── certificates/                               # Certificate PDFs for the Preview buttons
+│   ├── microsoft-power-bi.pdf
+│   ├── google-data-analytics.pdf
+│   ├── ibm-data-analyst.pdf
+│   ├── udemy-100-days-of-code.pdf
+│   └── infosys-basics-of-python.pdf
+└── README.md                                   # This file
 ```
 
-## 🛠️ Technologies Used
+## Tech used
 
-- **HTML5** - Semantic markup
-- **CSS3** - Responsive styling with flexbox/grid
-- **JavaScript** - Interactive elements
-- **GitHub Pages** - Free hosting
+- **HTML, CSS and JavaScript** — a single `index.html` file, no
+  framework and no build step
+- **GitHub Pages** — free hosting, deploys from the `main` branch
 
-## 📋 How to Use
+## View it locally
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/SujalPyDev/Portfolio-website.git
-   cd Portfolio-website
-   ```
+```bash
+git clone https://github.com/SujalPyDev/Portfolio-website.git
+cd Portfolio-website
+```
 
-2. Open `index.html` in your browser to view locally
+Then open `index.html` in a browser. The Resume button and the
+certificate Preview buttons work when the PDF files above are in
+place next to it.
 
-3. Customize the content:
-   - Update your name and bio in `index.html`
-   - Modify colors in `styles.css`
-   - Add your projects and images in the portfolio section
+## Deployment
 
-4. Push changes to GitHub - they'll auto-deploy to your live site!
-
-## 🎯 Key Sections
-
-- **Header** - Navigation and introduction
-- **About** - Professional summary and skills
-- **Projects** - Showcase of your best work
-- **Contact** - Ways to get in touch
-
-## 🚀 Deployment
-
-This site is automatically deployed to GitHub Pages. Any changes pushed to the `main` branch will be live within minutes!
-
-## 📝 Customization Tips
-
-- Replace placeholder images with your own
-- Update project links and descriptions
-- Add your actual contact information
-- Customize colors to match your brand
-
-## 🤝 Contributing
-
-This is your personal portfolio - feel free to modify and customize as needed!
-
-## 📄 License
-
-MIT License - Feel free to use this as a template for your own portfolio
-
-## 👤 Author
-
-**Sujal** - [GitHub Profile](https://github.com/SujalPyDev)
-
----
-
-⭐ If you found this helpful, consider starring the repository!
+The site is deployed with GitHub Pages from the `main` branch
+(root folder). Any push to `main` goes live within a few minutes —
+hard-refresh the live site (Ctrl+Shift+R) if you still see the
+old version.
