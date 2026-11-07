@@ -8,17 +8,15 @@
 <meta property="og:title" content="Sujal Jaiswal — Data Analyst">
 <meta property="og:description" content="SQL • Excel • Power BI • Python. Power BI capstone: $3,474 profit from 54 orders. Adventure Works Q1: +37.3% year over year.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#f8fafc">
-<meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f766e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>SJ</text></svg>">
 <style>
 :root{
   --bg:#f8fafc; --surface:#ffffff; --surface-soft:#f1f5f9;
   --ink:#0f172a; --muted:#475569; --faint:#64748b; --line:#e2e8f0;
-  --teal:#0f766e; --teal-dark:#0b5e57; --teal-soft:#ccfbf1; --teal-ink:#134e4a;
+  --teal:#0f766e; --teal-dark:#0b5e57; --teal-deep:#115e59; --teal-soft:#ccfbf1; --teal-ink:#134e4a;
   --navy:#0f2040; --navy2:#16294d;
   --violet:#6d28d9;
   --radius:14px; --radius-lg:20px;
@@ -31,15 +29,13 @@ body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;backgroun
 ::selection{background:var(--teal-soft);color:var(--teal-ink)}
 a{color:var(--teal);text-decoration:none}
 a:hover{text-decoration:underline}
-:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:4px}
-.hero-card dd a,.contact-row a{overflow-wrap:anywhere}
 img,svg{display:block}
 .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:0 0 10px 0;z-index:200}
 .skip:focus{left:0}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
 /* ---------- Nav ---------- */
-header{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid transparent;transition:box-shadow .25s,border-color .25s}
+header{position:sticky;top:0;z-index:100;background:rgba(248,250,252,.92);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:box-shadow .25s,border-color .25s}
 header.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 20px rgba(15,23,42,.05)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
 .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em;color:var(--ink)}
@@ -52,11 +48,11 @@ header.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 20px rgba(15,23
 .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:15px;cursor:pointer;color:var(--ink)}
 
 /* ---------- 3D buttons ---------- */
-.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px;padding:13px 24px;border-radius:12px;border:0;cursor:pointer;overflow:hidden;transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px;padding:13px 24px;border-radius:12px;border:0;cursor:pointer;overflow:hidden;transition:transform .16s ease,box-shadow .16s ease,background .16s ease;will-change:transform}
 .btn:hover{text-decoration:none}
 .btn:active{transform:translateY(4px) !important}
-.btn::after{content:'';position:absolute;top:0;left:0;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg) translateX(-220%);transition:transform .5s ease;pointer-events:none}
-.btn:hover::after{transform:skewX(-20deg) translateX(420%)}
+.btn::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .5s ease;pointer-events:none}
+.btn:hover::after{left:130%}
 .btn-primary{color:#fff;background:linear-gradient(135deg,#14b8a6,#0f766e 55%,#0b5e57);box-shadow:0 6px 0 #0a4a44,0 14px 28px rgba(15,118,110,.35)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 0 #0a4a44,0 20px 36px rgba(15,118,110,.4)}
 .btn-primary:active{box-shadow:0 2px 0 #0a4a44,0 6px 14px rgba(15,118,110,.3)}
@@ -69,13 +65,15 @@ header.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 20px rgba(15,23
 .btn-ghost3d:active{box-shadow:0 2px 0 #081226,0 6px 14px rgba(15,32,64,.3)}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;padding:76px 0 60px;overflow:hidden;background:
-  radial-gradient(560px 320px at 88% -10%,rgba(153,246,228,.45),transparent 70%),
-  radial-gradient(460px 300px at 4% 108%,rgba(221,214,254,.4),transparent 70%),
-  linear-gradient(180deg,#fff 0%,#f0fdfa 55%,var(--bg) 100%)}
+.hero{position:relative;padding:76px 0 60px;background:linear-gradient(180deg,#fff 0%,#f0fdfa 55%,var(--bg) 100%);overflow:hidden}
+.hero::before,.hero::after{content:'';position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;will-change:transform}
+.hero::before{width:480px;height:480px;background:#99f6e4;top:-180px;right:-80px;animation:drift 22s ease-in-out infinite alternate}
+.hero::after{width:380px;height:380px;background:#ddd6fe;bottom:-160px;left:-100px;animation:drift 26s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-40px,30px) scale(1.12)}}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--teal-ink);background:var(--teal-soft);border:1px solid #99f6e4;padding:6px 13px;border-radius:999px;margin-bottom:20px;box-shadow:0 4px 0 #99f6e4}
-.eyebrow i{width:8px;height:8px;border-radius:50%;background:#059669;display:inline-block}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:#059669;display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(5,150,105,.45)}50%{box-shadow:0 0 0 6px rgba(5,150,105,0)}}
 h1{font-family:'Sora',sans-serif;font-size:clamp(42px,5.4vw,62px);line-height:1.03;letter-spacing:-.03em;font-weight:800;margin-bottom:14px}
 h1 em{font-style:normal;background:linear-gradient(100deg,#0d9488,#0f766e 40%,#6d28d9 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .lede{font-size:18px;color:var(--muted);max-width:56ch;margin-bottom:26px}
@@ -86,25 +84,25 @@ h1 em{font-style:normal;background:linear-gradient(100deg,#0d9488,#0f766e 40%,#6
 .hero-stats span{font-size:12.5px;color:var(--faint);font-weight:500}
 
 /* Hero insight card + animated chart */
-.hero-card{background:linear-gradient(160deg,var(--navy2),var(--navy));color:#e2e8f0;border-radius:var(--radius-lg);padding:24px;box-shadow:0 20px 44px rgba(15,32,64,.35)}
+.hero-card{background:linear-gradient(160deg,var(--navy2),var(--navy));color:#e2e8f0;border-radius:var(--radius-lg);padding:24px;box-shadow:0 20px 44px rgba(15,32,64,.35);transform-style:preserve-3d}
 .hero-card h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#5eead4;margin-bottom:14px;font-weight:700}
-.hero-card dl{display:grid;gap:11px}
+.hero-card dl{display:grid;gap:11px;margin-bottom:18px}
 .hero-card .row{display:flex;justify-content:space-between;gap:16px;font-size:14px;border-bottom:1px solid rgba(255,255,255,.09);padding-bottom:11px}
 .hero-card .row:last-child{border-bottom:0;padding-bottom:0}
 .hero-card dt{color:#94a3b8}
 .hero-card dd{font-weight:600;color:#fff;text-align:right}
 .hero-card a{color:#5eead4}
+.bar-col span{font-size:11.5px;color:#cbd5e1;white-space:nowrap}
+.bar-col b{font-size:12.5px;color:#fff}
 
 /* ---------- Sections ---------- */
 section{padding:72px 0}
-#about,#skills,#certifications,#projects,#contact{content-visibility:auto;contain-intrinsic-size:auto 800px}
 .sec-head{max-width:680px;margin-bottom:36px}
 .kicker{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
 h2{font-family:'Sora',sans-serif;font-size:clamp(28px,3.4vw,38px);letter-spacing:-.02em;line-height:1.12;font-weight:800;margin-bottom:10px}
 .sec-head p{color:var(--muted);font-size:16.5px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
-.tilt{transform-style:preserve-3d}
-.tilt:hover{will-change:transform}
+.tilt{transform-style:preserve-3d;will-change:transform}
 
 /* About */
 .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:start}
@@ -191,7 +189,7 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
-  .hero::before,.hero::after,.eyebrow i{animation:none !important}
+  .hero::before,.hero::after,.eyebrow i,.bar{animation:none !important}
   *{transition:none !important}
 }
 @media (max-width:860px){
@@ -210,7 +208,6 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
   .hero{padding:48px 0 40px}
 }
 </style>
-<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body>
 <a class="skip" href="#projects">Skip to projects</a>
@@ -229,7 +226,7 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a class="btn btn-primary btn-sm nav-cta" href="Sujal_Jaiswal_Data_Analyst_Resume.pdf" download="Sujal_Jaiswal_Data_Analyst_Resume.pdf">Download Resume</a>
+    <a class="btn btn-primary btn-sm nav-cta" href="Sujal_Jaiswal_Data_Analyst_Resume.pdf">Download Resume</a>
   </div>
 </header>
 
@@ -243,7 +240,7 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
         <p class="lede">I turn messy, real-world data into clean dashboards and decisions — with <strong>SQL, Excel, Power BI and Python</strong>. BCom student with a business brain and an analyst&rsquo;s toolkit, based in India. Available for remote internships, immediately.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#projects">View Projects ↓</a>
-          <a class="btn btn-outline" href="Sujal_Jaiswal_Data_Analyst_Resume.pdf" download="Sujal_Jaiswal_Data_Analyst_Resume.pdf">Download Resume</a>
+          <a class="btn btn-outline" href="Sujal_Jaiswal_Data_Analyst_Resume.pdf">Download Resume</a>
         </div>
         <div class="hero-stats">
           <div><b>5</b><span>Certifications</span></div>
@@ -470,6 +467,8 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
     });
   }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+
   var btn = document.getElementById('menuBtn'), links = document.getElementById('navLinks');
   btn.addEventListener('click', function(){
     var open = links.classList.toggle('open');
@@ -505,10 +504,7 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
   if(smoothOK){
     document.documentElement.style.scrollBehavior = 'auto';
     var targetY = window.scrollY, currentY = window.scrollY, smoothRaf = null, ourScroll = false;
-    var cachedMaxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-    function maxY(){ return cachedMaxY; }
-    function refreshMaxY(){ cachedMaxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight); }
-    window.addEventListener('load', refreshMaxY);
+    function maxY(){ return Math.max(0, document.documentElement.scrollHeight - window.innerHeight); }
     function clampY(y){ return Math.max(0, Math.min(maxY(), y)); }
     function smoothStep(){
       currentY += (targetY - currentY) * 0.12;
@@ -518,8 +514,7 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
     }
     function smoothTo(y){ targetY = clampY(y); if(!smoothRaf) smoothRaf = requestAnimationFrame(smoothStep); }
     window.addEventListener('wheel', function(e){
-      var dy = e.deltaY * (e.deltaMode === 1 ? 16 : 1); // line mode -> pixels
-      targetY = clampY(targetY + dy);
+      targetY = clampY(targetY + e.deltaY);
       if(!smoothRaf) smoothRaf = requestAnimationFrame(smoothStep);
       e.preventDefault();
     }, {passive:false});
@@ -528,7 +523,7 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
       if(ourScroll){ ourScroll = false; return; }
       if(!smoothRaf){ targetY = currentY = window.scrollY; }
     }, {passive:true});
-    window.addEventListener('resize', function(){ refreshMaxY(); targetY = clampY(targetY); currentY = clampY(currentY); });
+    window.addEventListener('resize', function(){ targetY = clampY(targetY); currentY = clampY(currentY); });
     // Nav / button anchors glide through the same easing instead of jumping
     document.querySelectorAll('a[href^="#"]').forEach(function(a){
       a.addEventListener('click', function(e){
@@ -545,28 +540,23 @@ footer{padding:28px 0;color:var(--faint);font-size:13.5px}
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(fine && !reduced){
     document.querySelectorAll('[data-tilt]').forEach(function(card){
-      var raf = null, rx = 0, ry = 0, tx = 0, ty = 0, rect = null;
+      var raf = null, rx = 0, ry = 0, tx = 0, ty = 0;
       function anim(){
         rx += (tx - rx) * .12; ry += (ty - ry) * .12;
-        if(Math.abs(tx-rx) < .01 && Math.abs(ty-ry) < .01){
-          rx = tx; ry = ty; raf = null;
-          card.style.transform = (tx === 0 && ty === 0) ? '' : 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(-4px)';
-          return;
-        }
         card.style.transform = 'perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) translateY(-4px)';
-        raf = requestAnimationFrame(anim);
+        if(Math.abs(tx-rx) > .01 || Math.abs(ty-ry) > .01){ raf = requestAnimationFrame(anim); } else { raf = null; }
       }
-      card.addEventListener('mouseenter', function(){ rect = card.getBoundingClientRect(); });
       card.addEventListener('mousemove', function(e){
-        if(!rect) rect = card.getBoundingClientRect();
-        var dx = (e.clientX - (rect.left + rect.width/2)) / (rect.width/2);
-        var dy = (e.clientY - (rect.top + rect.height/2)) / (rect.height/2);
+        var r = card.getBoundingClientRect();
+        var dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
+        var dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
         ty = dx * 5; tx = -dy * 4;
         if(!raf) raf = requestAnimationFrame(anim);
       });
       card.addEventListener('mouseleave', function(){
-        rect = null; tx = 0; ty = 0;
+        tx = 0; ty = 0;
         if(!raf) raf = requestAnimationFrame(anim);
+        setTimeout(function(){ if(tx===0 && ty===0) card.style.transform=''; }, 350);
       });
     });
   }
